@@ -1,0 +1,36 @@
+paths:
+  images: data/raw/images
+  metadata_csv: data/raw/metadata.csv
+  splits_json: data/processed/splits.json
+  outfits_csv: data/processed/outfits.csv
+  pairs_csv: data/processed/train_pairs.csv
+  embeddings_npy: data/processed/embeddings.npy
+  ids_json: data/processed/ids.json
+  faiss_index: data/indexes/fashion_embeddings.faiss
+
+model:
+  backbone: "hf-hub:Marqo/marqo-fashionSigLIP"  # accepts standard OpenCLIP names or hf-hub:*
+  pretrained: null                              # ignored for hf-hub models
+  embed_dim: "auto"                            # infer automatically at runtime
+  head_out_dim: 256
+  head_weights: data/processed/head_epoch_last.pt  # path to trained head weights (optional)
+
+train:
+  img_size: 224
+  batch_size: 128
+  epochs: 10
+  lr_head: 1.0e-3
+  weight_decay: 1.0e-4
+  loss: "triplet"            # or "infonce"
+  margin: 0.3                 # for triplet
+
+index:
+  metric: "cosine"           # "l2" or "cosine"
+  topk: 50
+  use_gpu: false
+
+serve:
+  host: 0.0.0.0
+  port: 8081
+  use_head: true          # enable reranking with the trained head if weights exist
+  candidates: 200         # number of FAISS candidates before rerank

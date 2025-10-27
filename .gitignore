@@ -1,0 +1,38 @@
+# Environments
+.venv/
+venv/
+env/
+*.pyc
+__pycache__/
+.python-version
+
+# OS / editor cruft
+.DS_Store
+.idea/
+.vscode/
+
+# Data artifacts
+data/raw/images/**
+data/processed/**/*.npy
+data/processed/**/*.npz
+data/processed/**/*.json
+data/processed/**/*.pt
+data/processed/**/*.pth
+data/processed/**/*.ckpt
+data/indexes/**/*.faiss
+
+# Logs / cache
+*.log
+wandb/
+lightning_logs/
+
+# Generated checkpoints & misc
+*.pt
+*.pth
+*.ckpt
+*.tar
+
+# Build / dist
+dist/
+build/
+*.egg-info/
