@@ -58,4 +58,3 @@ See [`train/README.md`](train/README.md) for more detail on each step, configura
 - Head checkpoints saved by `train/train_head.py` include `{"head": state_dict, "in_dim": ..., "out_dim": ...}` so `index/search_server.py` can optionally re-rank FAISS candidates.
 - Training defaults to cached embeddings; set `train.use_cached_embeddings: false` in `config.yaml` to train directly from images.
 - Evaluating positive/negative pair separation is easy via the new `train/eval_head.py` script.
-- Logically ignore large artifacts with `.gitignore` (`data/processed/*.npy`, `.faiss`, `.pt`, etc.) before pushing to GitHub.
