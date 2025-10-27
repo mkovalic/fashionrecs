@@ -7,7 +7,9 @@ Self-contained reference implementation of a fashion-recommendation pipeline tha
 3. Trains a lightweight projection head to score outfit compatibility (triplet or InfoNCE).
 4. Serves recommendations via FastAPI (`index/search_server.py`).
 
-A Colab notebook was used during prototyping; you can adapt it if you need a managed GPU. *(placeholder link: [Colab Notebook](https://colab.research.google.com/drive/1ORSHQ4gb5fvByRA1uFapNGYiPvdtpvAE?usp=sharing \))* The repo now includes scripts to run everything locally—see below for the minimal workflow and [`train/README.md`](train/README.md) for step-by-step instructions.
+A Colab notebook was used during prototyping; you can adapt it if you need a managed GPU. 
+[![Open In C](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1ORSHQ4gb5fvByRA1uFapNGYiPvdtpvAE?usp=sharing) 
+The repo includes scripts to run everything locally—see below for the minimal workflow and [`train/README.md`](train/README.md) for step-by-step instructions.
 
 ## Data Layout
 
